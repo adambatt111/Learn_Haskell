@@ -81,5 +81,46 @@ bobsAge = snd bobSmith
 
 names = ["Bob", "Mary", "Tom"]
 
-addresses = ["123 Main", "234 North ", "567 South]
+addresses = ["123 Main", "234 North ", "567 South"]
 
+namesNAddress = zip names addresses 
+
+main = do
+    putStrLn "What's your name"
+    name <- getLine
+    putStrLn ("Hello " ++ name)
+
+{-- 
+creating a function
+
+funcName param1 param2 = operations (returned value)
+--}
+addMe :: Int -> Int -> Int
+addMe x y = x + y
+
+sumMe x y = x + y
+
+addTuples :: (Int, Int) -> (Int, Int) -> (Int, Int)
+addTuples (x, y) (x2, y2) = (x + x2,  y + y2)
+
+whatAge :: Int -> String
+whatAge 16 = "You can drive"
+whatAge 18 = "You can vote"
+whatAge 21 = "You're an adult"
+whatAge _ = "Nothing Important"
+
+factorial :: Int -> Int
+
+factorial 0 = 1
+factorial n = n * factorial (n - 1)
+
+-- 3 * factorial(2) : 3
+-- 2 * factorial(1) : 2
+-- 1 * factorial(0) : 1
+
+isOdd :: Int -> Bool
+isOdd n
+    | n `mod` 2 == 0 = False
+    | otherwise = True
+    
+isEven n = n 
